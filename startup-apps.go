@@ -14,9 +14,12 @@ func main() {
 	// 	fmt.Println("Path : ", goPath)
 	// }
 
-	args := []string { "--processStart", "Teams.exe" }
-	command := exec.Command("C:\\Users\\aps\\AppData\\Local\\Microsoft\\Teams\\Update.exe", args...)
-	command.Start();
+	// args := []string { "--processStart", "Teams.exe" }
+	// command := exec.Command("C:\\Users\\aps\\AppData\\Local\\Microsoft\\Teams\\Update.exe", args...)
+	// command.Start()
+
+	smartGitCommand := exec.Command("C:\\Program Files\\SmartGit\\bin\\smartgit.exe")
+	smartGitCommand.Start()
 
 	fmt.Println("Teams Started...")
 }
