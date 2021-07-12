@@ -1,4 +1,4 @@
-Startup Apps Runner
+# Startup Apps Runner
 
 This tool can be used to have a single point where we can specify all the required startup-apps to spawn up.
 
