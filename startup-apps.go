@@ -1,25 +1,28 @@
 package main
 
-import "fmt"
-import "os/exec"
+import (
+	"fmt"
+	"os/exec"
+	"time"
+)
 
 func main() {
-	fmt.Println("Started...")
+	fmt.Println("Starting Apps...")
 
-	// goPath, err := exec.LookPath("docker-desktop")
+	startApp("Teams", "C:\\Users\\aps\\AppData\\Local\\Microsoft\\Teams\\Update.exe", ([]string{"--processStart", "Teams.exe"})...)
+	startApp("SmartGit", "C:\\Program Files\\SmartGit\\bin\\smartgit.exe")
+	startApp("Outlook", "C:\\Program Files (x86)\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE")
+	startApp("Docker Desktop", "C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe")
+	startApp("ConEmu", "C:\\Program Files\\ConEmu\\ConEmu64.exe")
 
-	// if err != nil {
-	// 	fmt.Println("Error : ", err)
-	// } else {
-	// 	fmt.Println("Path : ", goPath)
-	// }
+	fmt.Println("Apps Started...")
+}
 
-	// args := []string { "--processStart", "Teams.exe" }
-	// command := exec.Command("C:\\Users\\aps\\AppData\\Local\\Microsoft\\Teams\\Update.exe", args...)
-	// command.Start()
+func startApp(appName string, exePath string, args ...string) {
+	fmt.Println("Starting" + appName + "...")
 
-	smartGitCommand := exec.Command("C:\\Program Files\\SmartGit\\bin\\smartgit.exe")
-	smartGitCommand.Start()
+	command := exec.Command(exePath, args...)
+	command.Start()
 
-	fmt.Println("Teams Started...")
+	time.Sleep(5)
 }
