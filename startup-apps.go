@@ -23,5 +23,5 @@ func startApp(appName string, exePath string, args ...string) {
 	command := exec.Command(exePath, args...)
 	command.Start()
 
-	time.Sleep(5 * time.Second)
+	time.Sleep(10 * time.Second)
 }
