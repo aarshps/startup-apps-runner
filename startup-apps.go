@@ -18,10 +18,10 @@ func main() {
 }
 
 func startApp(appName string, exePath string, args ...string) {
-	fmt.Println("Starting" + appName + "...")
+	fmt.Println("Starting " + appName + "...")
 
 	command := exec.Command(exePath, args...)
 	command.Start()
 
-	time.Sleep(5)
+	time.Sleep(5 * time.Second)
 }
